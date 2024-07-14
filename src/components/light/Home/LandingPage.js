@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import * as THREE from 'three';
+import TypeWriter from './TypeWriter';
 import styled from 'styled-components';
 
 const CanvasContainer = styled.div`
@@ -39,7 +40,13 @@ const LandingPage = () => {
     };
   }, []);
 
-  return <CanvasContainer />;
+  return <>
+  <div>
+    <h1>Welcome to My Portfolio</h1>
+    <TypeWriter />
+  </div>
+    <CanvasContainer />
+</>;
 };
 
 export default LandingPage;
