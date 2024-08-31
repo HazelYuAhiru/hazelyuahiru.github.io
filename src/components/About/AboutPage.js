@@ -7,7 +7,7 @@ const AboutContainer = styled(motion.div)`
   text-align: center;
 `;
 
-const About = () => (
+const AboutPage = () => (
   <AboutContainer
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -21,4 +21,4 @@ const About = () => (
   </AboutContainer>
 );
 
-export default About;
+export default AboutPage;
