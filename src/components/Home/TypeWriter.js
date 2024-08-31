@@ -8,6 +8,7 @@ function TypeWriter() {
         strings: [
           "Software Developer",
           "Yihong Yu",
+          "Hazel Yu",
           "4th Year Undergrad",
         ],
         autoStart: true,
