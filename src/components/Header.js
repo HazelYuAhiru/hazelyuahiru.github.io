@@ -1,26 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  Container,
-  Button,
-  Menu,
-  MenuItem,
-  Box,
-} from "@mui/material";
+import { AppBar, Toolbar, IconButton, Typography, Container, Button, Menu, MenuItem, Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import {
-  Home as HomeIcon,
-  Person as PersonIcon,
-  Work as WorkIcon,
-  Description as DescriptionIcon,
-  Menu as MenuIcon,
-} from "@mui/icons-material";
+import { useTheme } from '@mui/material/styles';
+import { Home, Person, Work, Description, Menu as MenuIcon } from "@mui/icons-material";
 import logo from "../assets/avatar.png";
 
 function Header() {
+  const theme = useTheme();
   const [navColour, setNavColour] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -50,7 +36,7 @@ function Header() {
   return (
     <AppBar
       position="fixed"
-      sx={{ backgroundColor: navColour ? "primary.dark" : "primary.main" }}
+      sx={{ backgroundColor: navColour ? theme.palette.background.default : theme.palette.primary.main }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -68,16 +54,52 @@ function Header() {
           <Box sx={{ flexGrow: 1 }} />
           
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button component={Link} to="/" color="inherit" startIcon={<HomeIcon />}>
+            <Button 
+              component={Link} 
+              to="/" 
+              color="inherit" 
+              startIcon={<Home />}
+              sx={{
+                '&:hover': {
+                  color: theme.palette.secondary.main
+                }
+              }}>
               Home
             </Button>
-            <Button component={Link} to="/about" color="inherit" startIcon={<PersonIcon />}>
+            <Button 
+              component={Link} 
+              to="/about" 
+              color="inherit" 
+              startIcon={<Person />}
+              sx={{
+                '&:hover': {
+                  color: theme.palette.secondary.main
+                }
+              }}>
               About
             </Button>
-            <Button component={Link} to="/project" color="inherit" startIcon={<WorkIcon />}>
+            <Button 
+              component={Link} 
+              to="/project" 
+              color="inherit" 
+              startIcon={<Work />}
+              sx={{
+                '&:hover': {
+                  color: theme.palette.secondary.main
+                }
+              }}>
               Projects
             </Button>
-            <Button component={Link} to="/resume" color="inherit" startIcon={<DescriptionIcon />}>
+            <Button 
+              component={Link} 
+              to="/resume" 
+              color="inherit" 
+              startIcon={<Description />}
+              sx={{
+                '&:hover': {
+                  color: theme.palette.secondary.main
+                }
+              }}>
               Resume
             </Button>
           </Box>
@@ -108,16 +130,16 @@ function Header() {
               onClose={handleMenuClose}
             >
               <MenuItem component={Link} to="/" onClick={handleMenuClose}>
-                <HomeIcon sx={{ mr: 1 }} /> Home
+                <Home sx={{ mr: 1 }} /> Home
               </MenuItem>
               <MenuItem component={Link} to="/about" onClick={handleMenuClose}>
-                <PersonIcon sx={{ mr: 1 }} /> About
+                <Person sx={{ mr: 1 }} /> About
               </MenuItem>
               <MenuItem component={Link} to="/project" onClick={handleMenuClose}>
-                <WorkIcon sx={{ mr: 1 }} /> Projects
+                <Work sx={{ mr: 1 }} /> Projects
               </MenuItem>
               <MenuItem component={Link} to="/resume" onClick={handleMenuClose}>
-                <DescriptionIcon sx={{ mr: 1 }} /> Resume
+                <Description sx={{ mr: 1 }} /> Resume
               </MenuItem>
             </Menu>
           </Box>

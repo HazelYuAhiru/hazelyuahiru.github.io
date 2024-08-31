@@ -1,33 +1,35 @@
 import React from "react";
-import { Container, Grid2, Typography, IconButton } from "@mui/material";
+import { Container, Grid, Typography, IconButton } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 import { GitHub, LinkedIn } from "@mui/icons-material";
 
 function Footer() {
+  const theme = useTheme();
   const year = new Date().getFullYear();
 
   return (
     <Container 
-      maxWidth="xl" 
-      sx={{ bgcolor: "colors.primary", color: "white", py: 3, mt: 4 }}
+      maxWidth="l" 
+      sx={{ bgcolor: theme.palette.primary.main, py: 3, mt: 4 }}
     >
-      <Grid2 container justifyContent="space-between" alignItems="center">
-        <Grid2 item md={4} textAlign="center">
-          <Typography variant="h6">
-            Developed by Hazel
+      <Grid container justifyContent="space-between" alignItems="center">
+        <Grid item md={4} textAlign="center">
+          <Typography variant="h8" color={theme.palette.text.contrast}>
+            Developed by Hazel Yu
           </Typography>
-        </Grid2>
-        <Grid2 item md={4} textAlign="center">
-          <Typography variant="h6">
+        </Grid>
+        <Grid item md={4} textAlign="center">
+          <Typography variant="h8" color={theme.palette.text.contrast}>
             Copyright © {year} 
           </Typography>
-        </Grid2>
-        <Grid2 item md={4} textAlign="center">
+        </Grid>
+        <Grid item md={4} textAlign="center">
           <IconButton
             component="a"
             href="https://github.com/HazelYuAhiru"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: "white" }}
+            sx={{ color: theme.palette.text.contrast }}
           >
             <GitHub />
           </IconButton>
@@ -36,12 +38,12 @@ function Footer() {
             href="https://www.linkedin.com/in/yihong-yu-hazel/"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: "white" }}
+            sx={{ color: theme.palette.text.contrast }}
           >
             <LinkedIn />
           </IconButton>
-        </Grid2>
-      </Grid2>
+        </Grid>
+      </Grid>
     </Container>
   );
 }

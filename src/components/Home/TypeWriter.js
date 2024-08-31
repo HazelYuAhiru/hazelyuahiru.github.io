@@ -7,9 +7,8 @@ function TypeWriter() {
       options={{
         strings: [
           "Software Developer",
-          "Quack Quack Zot Zot",
+          "Yihong Yu",
           "4th Year Undergrad",
-          "Fan Artist?",
         ],
         autoStart: true,
         loop: true,
