@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { ThemeProvider } from '@mui/material/styles';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import getTheme from './styles/theme';
+import ThemeGlobalStyles from './styles/ThemeGlobalStyles';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import AboutPage from './components/About/AboutPage';
+import ResumePage from './components/Resume/ResumePage';
+import HomePage from './components/Home/HomePage';
+import ScrollToTop from "./components/ScrollToTop";
+import { Box } from '@mui/material';
 
 function App() {
+  const [themeMode, setThemeMode] = useState('light');
+  const toggleTheme = () => {
+    setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+  };
+
+  const theme = getTheme(themeMode);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeProvider theme={theme}>
+      <ThemeGlobalStyles />
+      <Router>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: '100vh',
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Header />
+          <ScrollToTop />
+          <Box>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/resume" element={<ResumePage />} />
+            </Routes>
+          </Box>
+        </Box>
+      </Router>
+      <Footer />
+    </ThemeProvider>
   );
 }
 
