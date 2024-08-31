@@ -80,7 +80,7 @@ function Header() {
             </Button>
             <Button 
               component={Link} 
-              to="/project" 
+              to="/experience" 
               color="inherit" 
               startIcon={<Work />}
               sx={{
@@ -88,7 +88,7 @@ function Header() {
                   color: theme.palette.secondary.main
                 }
               }}>
-              Projects
+              Experience
             </Button>
             <Button 
               component={Link} 
@@ -135,8 +135,8 @@ function Header() {
               <MenuItem component={Link} to="/about" onClick={handleMenuClose}>
                 <Person sx={{ mr: 1 }} /> About
               </MenuItem>
-              <MenuItem component={Link} to="/project" onClick={handleMenuClose}>
-                <Work sx={{ mr: 1 }} /> Projects
+              <MenuItem component={Link} to="/experience" onClick={handleMenuClose}>
+                <Work sx={{ mr: 1 }} /> Experience
               </MenuItem>
               <MenuItem component={Link} to="/resume" onClick={handleMenuClose}>
                 <Description sx={{ mr: 1 }} /> Resume

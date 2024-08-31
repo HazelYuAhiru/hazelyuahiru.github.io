@@ -9,7 +9,7 @@ function Footer() {
 
   return (
     <Container 
-      maxWidth="l" 
+      maxWidth="xl" 
       sx={{ bgcolor: theme.palette.primary.main, py: 3, mt: 4 }}
     >
       <Grid container justifyContent="space-between" alignItems="center">
