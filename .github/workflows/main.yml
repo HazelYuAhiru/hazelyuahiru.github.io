@@ -20,9 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Lint (Ignore Errors)
-        run: npm run lint || true
-
       - name: Build
         run: npm run build
 
