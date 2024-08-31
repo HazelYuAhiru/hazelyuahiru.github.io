@@ -13,9 +13,10 @@ import { Box } from '@mui/material';
 
 function App() {
   const [themeMode, setThemeMode] = useState('light');
-  const toggleTheme = () => {
-    setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  };
+  // TODO: Implement theme toggling
+  // const toggleTheme = () => {
+  //   setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+  // };
 
   const theme = getTheme(themeMode);
 
