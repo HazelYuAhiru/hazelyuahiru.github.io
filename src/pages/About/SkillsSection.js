@@ -71,6 +71,7 @@ const technologySkills = [
   <SiGooglecloud />,
 ];
 
+// TODO: move these to a separate file
 const languageTags = [
   { value: "LANGUAGE I USED", count: 30 },
   { value: "Python", count: 25 },

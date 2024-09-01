@@ -18,7 +18,7 @@ const blinkingAnimation = (delay) => ({
   },
 });
 
-const CustomTagRenderer = (tag, size, color, key) => {
+const CustomTagRenderer = (tag, size, key) => {
   // TODO: remove hardcoded words
   const specificWords = [
     "LANGUAGE I USED",
