@@ -3,12 +3,12 @@ import { ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import getTheme from './styles/theme';
 import ThemeGlobalStyles from './styles/ThemeGlobalStyles';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import AboutPage from './components/About/AboutPage';
-import ResumePage from './components/Resume/ResumePage';
-import HomePage from './components/Home/HomePage';
-import ScrollToTop from "./components/ScrollToTop";
+import Footer from './pages/Footer';
+import Header from './pages/Header';
+import AboutPage from './pages/About/AboutPage';
+import ResumePage from './pages/Resume/ResumePage';
+import HomePage from './pages/Home/HomePage';
+import ScrollToTop from "./pages/ScrollToTop";
 import { Box } from '@mui/material';
 
 function App() {

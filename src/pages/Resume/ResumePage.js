@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Container, Box, Button, Grid2, Typography, Switch, FormControlLabel } from "@mui/material";
-import { AiOutlineDownload } from "react-icons/ai";
+import { Container, Box, Grid, Typography } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 import ResumeSde from "../../assets/resume-sde-717.pdf"; 
 import ResumeAi from "../../assets/resume-ai-814.pdf"; 
+import CustomSwitch from '../../components/CustomSwitch'; 
 
 function ResumePage() {
+  const theme = useTheme();
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
   const [useAltResume, setUseAltResume] = useState(false); 
@@ -33,28 +35,33 @@ function ResumePage() {
       }}
     >
       <Container maxWidth="lg">
-        <Grid2 container justifyContent="center" sx={{ position: "relative", mb: 3 }}>
-          <Typography variant="h4">SDE Roles</Typography>
-          <FormControlLabel
-            control={<Switch checked={useAltResume} onChange={handleSwitchChange} />}
-          />
-          <Typography variant="h4">AI Roles</Typography>
-        </Grid2>
+      <Grid container justifyContent="center" sx={{ position: "relative", mb: 3 }}>
+        <Typography variant="h3"
+          sx={{ 
+            color: theme.palette.text.contrast, 
+            fontWeight: "bold",
+            mr: 2,
+          }}> 
+          Resume For
+        </Typography>
+        <CustomSwitch 
+          checked={useAltResume} 
+          onChange={handleSwitchChange} 
+          option1={'AI'} 
+          option2={'SDE'} 
+          sx={{ mx: 2 }}
+        />
+        <Typography variant="h3"
+          sx={{ 
+            color: theme.palette.text.contrast, 
+            fontWeight: "bold",
+            ml: 2,
+          }}>  
+          Roles
+        </Typography>
+      </Grid>
 
-        <Grid2 container justifyContent="center" sx={{ position: "relative", mb: 3 }}>
-          <Button
-            variant="contained"
-            color="primary"
-            href={selectedResume}
-            target="_blank"
-            startIcon={<AiOutlineDownload />}
-            sx={{ maxWidth: "250px" }}
-          >
-            Download Resume
-          </Button>
-        </Grid2>
-
-        <Grid2 container justifyContent="center" sx={{ mb: 3 }}>
+        <Grid container justifyContent="center" sx={{ mb: 3 }}>
             <object
               data={selectedResume}
               type="application/pdf"
@@ -63,7 +70,7 @@ function ResumePage() {
             >
               <Typography>Your browser does not support PDFs. Please download the PDF to view it :(</Typography>
             </object>
-        </Grid2>
+        </Grid>
       </Container>
     </Box>
   );

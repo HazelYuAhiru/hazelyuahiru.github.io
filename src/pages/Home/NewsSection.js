@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Paper, Typography } from '@mui/material';
 import { motion, useAnimation } from 'framer-motion';
@@ -11,7 +11,7 @@ function NewsSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const controls = useAnimation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       controls.start({ opacity: 1, y: 0 });
     }
@@ -48,7 +48,7 @@ function NewsSection() {
             sx={{ padding: "1.5rem", marginBottom: "1.5rem", opacity: 0, y: 20 }}
             animate={controls}
             initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: index * 0.3 }}
+            transition={{ duration: 1.0, delay: index * 0.3 }}
           >
             <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>
               {news.title}

@@ -28,6 +28,7 @@ const theme = {
         },
     },
     dark: {
+        // TODO: Implement dark theme
         background: '#3d405b',
         text: '#f4f1de',
         accent: '#f2cc8f',

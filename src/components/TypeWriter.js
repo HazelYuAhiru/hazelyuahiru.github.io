@@ -1,16 +1,11 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 
-function TypeWriter() {
+const TypeWriter = ({ strings }) => {
   return (
     <Typewriter
       options={{
-        strings: [
-          "Software Developer",
-          "Yihong Yu",
-          "Hazel Yu",
-          "4th Year Undergrad",
-        ],
+        strings: strings,
         autoStart: true,
         loop: true,
         deleteSpeed: 50,
