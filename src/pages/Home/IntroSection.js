@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container, Grid, Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import TypeWriter from './TypeWriter'; 
-import homeLogo from '../../assets/homeImg.jpg'; 
+import TypeWriter from '../../components/TypeWriter'; 
+import homeImg from '../../assets/homeImg.jpg'; 
 
 function IntroSection() {
     const theme = useTheme();
+    const strings = [ "A Software Developer", "Yihong Yu", "Hazel Yu", "A Mentor", "AI", "A 4th Year Undergrad" ];
 
     return (
       <Container maxWidth="xl">
@@ -19,7 +20,8 @@ function IntroSection() {
                 marginLeft: '1rem' 
               }}
             >
-              I'M / WANNA-BE<TypeWriter />
+              I'M / WANNA-BE
+              <TypeWriter strings={strings} />
             </Typography>
           </Grid>
 
@@ -36,7 +38,7 @@ function IntroSection() {
           >
             <Box
               component="img"
-              src={homeLogo}
+              src={homeImg}
               alt="home pic"
               sx={{
                 maxHeight: '450px',
