@@ -3,10 +3,10 @@ import { Container, Grid, Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import TypeWriter from '../../components/TypeWriter'; 
 import homeImg from '../../assets/Home/homeImg.jpg'; 
+import { typeStrings } from './HomeStatic';
 
 function IntroSection() {
     const theme = useTheme();
-    const strings = [ "A Software Developer", "Yihong Yu", "Hazel Yu", "A Mentor", "AI", "A 4th Year Undergrad" ];
 
     return (
       <Container maxWidth="xl">
@@ -21,7 +21,7 @@ function IntroSection() {
               }}
             >
               I'M / WANNA-BE
-              <TypeWriter strings={strings} />
+              <TypeWriter strings={typeStrings} />
             </Typography>
           </Grid>
 

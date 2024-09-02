@@ -2,17 +2,18 @@ import React from "react";
 import { Card, CardMedia, CardContent, CardActions, Typography, Button } from "@mui/material";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { ImBlog } from "react-icons/im";
 
 const ProjectCard = (props) => {
   return (
-    <Card sx={{ maxWidth: 345, margin: '15px' }} >
+    <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <CardMedia
         component="img"
         height="140"
         image={props.imgPath ? props.imgPath : "https://via.placeholder.com/150"}
         alt="card-img"
       />
-      <CardContent>
+      <CardContent sx={{ flexGrow: 1 }}>
         <Typography gutterBottom variant="h5" component="div">
           {props.title}
         </Typography>
@@ -21,12 +22,17 @@ const ProjectCard = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        { props.ghLink && (
+        {props.ghLink && (
           <Button size="small" color="primary" href={props.ghLink} target="_blank" startIcon={<BsGithub />}>
             GitHub
           </Button>
         )}
-        { props.demoLink && (
+        {props.blogLink && (
+          <Button size="small" color="primary" href={props.blogLink} target="_blank" startIcon={<ImBlog />}>
+            Blog
+          </Button>
+        )}
+        {props.demoLink && (
           <Button
             size="small"
             color="primary"
