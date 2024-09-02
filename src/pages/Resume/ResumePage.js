@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Box, Grid, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
-import ResumeSde from "../../assets/resume-sde-717.pdf"; 
-import ResumeAi from "../../assets/resume-ai-814.pdf"; 
+import ResumeSde from "../../assets/Resume/resume-sde-717.pdf"; 
+import ResumeAi from "../../assets/Resume/resume-ai-814.pdf"; 
 import CustomSwitch from '../../components/CustomSwitch'; 
 
 function ResumePage() {

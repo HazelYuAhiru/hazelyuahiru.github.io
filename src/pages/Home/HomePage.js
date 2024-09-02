@@ -12,7 +12,6 @@ function HomePage() {
       }}
     >
       <IntroSection />
-
       <Box sx={{ marginTop: "6rem" }}> 
         <NewsSection />
       </Box>

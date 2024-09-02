@@ -1,21 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { Box, Paper, Typography } from '@mui/material';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-
-const MotionPaper = motion(Paper);
+import { Box, Typography } from '@mui/material';
+import AnimatedCard from '../../components/AnimatedCard'; 
 
 function NewsSection() {
   const theme = useTheme();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [controls, inView]);
 
   const newsItems = [
     {
@@ -40,26 +29,15 @@ function NewsSection() {
       <Typography variant="h3" sx={{ marginBottom: "2rem", fontWeight: 'bold', color: theme.palette.text.contrast }}>
         Latest News & Updates
       </Typography>
-      <Box ref={ref}>
+      <Box>
         {newsItems.map((news, index) => (
-          <MotionPaper
+          <AnimatedCard
             key={index}
-            elevation={3}
-            sx={{ padding: "1.5rem", marginBottom: "1.5rem", opacity: 0, y: 20 }}
-            animate={controls}
-            initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 1.0, delay: index * 0.3 }}
-          >
-            <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>
-              {news.title}
-            </Typography>
-            <Typography variant="body1" sx={{ marginBottom: '0.5rem' }}>
-              {news.description}
-            </Typography>
-            <Typography variant="caption" color="textSecondary">
-              {news.date}
-            </Typography>
-          </MotionPaper>
+            title={news.title}
+            description={news.description}
+            date={news.date}
+            index={index}
+          />
         ))}
       </Box>
     </Box>

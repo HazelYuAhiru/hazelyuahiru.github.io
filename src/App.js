@@ -8,6 +8,7 @@ import Header from './pages/Header';
 import AboutPage from './pages/About/AboutPage';
 import ResumePage from './pages/Resume/ResumePage';
 import HomePage from './pages/Home/HomePage';
+import ExperiencePage from './pages/Experience/ExperiencePage';
 import ScrollToTop from "./pages/ScrollToTop";
 import { Box } from '@mui/material';
 
@@ -38,6 +39,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/experience" element={<ExperiencePage />} />
               <Route path="/resume" element={<ResumePage />} />
             </Routes>
           </Box>

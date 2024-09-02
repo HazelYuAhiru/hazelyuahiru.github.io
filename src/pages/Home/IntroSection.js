@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Grid, Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import TypeWriter from '../../components/TypeWriter'; 
-import homeImg from '../../assets/homeImg.jpg'; 
+import homeImg from '../../assets/Home/homeImg.jpg'; 
 
 function IntroSection() {
     const theme = useTheme();

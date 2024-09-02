@@ -3,7 +3,7 @@ import { Card, CardContent, Typography, Box, List, ListItem, ListItemIcon, Conta
 import { ImPointRight } from "react-icons/im";
 import { useTheme } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-import aboutImg from "../../assets/aboutImg.png"; 
+import aboutImg from "../../assets/About/aboutImg.png"; 
 
 function AboutMeSection() {
   const theme = useTheme();
