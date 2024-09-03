@@ -15,7 +15,7 @@ function Footer() {
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item md={4} textAlign="center">
           <Typography variant="h8" color={theme.palette.text.contrast}>
-            Developed by Hazel Yu
+            Art & Developed by Hazel Yu <br /> Model by jeremy [CC-BY] via Poly Pizza
           </Typography>
         </Grid>
         <Grid item md={4} textAlign="center">

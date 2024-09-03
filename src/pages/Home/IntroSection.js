@@ -2,8 +2,9 @@ import React from 'react';
 import { Container, Grid, Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import TypeWriter from '../../components/TypeWriter'; 
-import homeImg from '../../assets/Home/homeImg.jpg'; 
 import { typeStrings } from './HomeStatic';
+import ModelDisplay from '../../components/ModelDisplay'; 
+import duckModel from '../../assets/Home/Duck.glb';
 
 function IntroSection() {
     const theme = useTheme();
@@ -36,16 +37,9 @@ function IntroSection() {
               position: 'relative',
             }}
           >
-            <Box
-              component="img"
-              src={homeImg}
-              alt="home pic"
-              sx={{
-                maxHeight: '450px',
-                objectFit: 'contain',
-                borderRadius: '10px',
-              }}
-            />
+            <Box sx={{ width: '100%', height: '100%' }}>
+              <ModelDisplay url={duckModel} /> 
+            </Box>
           </Grid>
         </Grid>
       </Container>
